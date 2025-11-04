@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>First Nations of Canada — Regions & Lifestyles</title>
+  <style>
+    :root {
+      --accent: #2b6cb0;
+      --muted: #64748b;
+      --card: #ffffffcc;
+      --bg1: #e0f2fe;
+      --bg2: #f8fafc;
+      --radius: 16px;
+      --shadow: 0 10px 25px rgba(15, 23, 42, 0.1);
+      --transition: all 0.35s ease;
+      font-family: 'Inter', system-ui, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: linear-gradient(135deg, var(--bg1), var(--bg2));
+      color: #0f172a;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    header {
+      background: linear-gradient(90deg, #1e3a8a, #2563eb);
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: '';
+      position: absolute;
+      top: -40%;
+      left: -20%;
+      width: 140%;
+      height: 200%;
+      background: radial-gradient(circle at center, rgba(255,255,255,0.15), transparent 60%);
+      animation: rotate 20s linear infinite;
+    }
+
+    @keyframes rotate {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: clamp(1.8rem, 3vw, 3rem);
+      letter-spacing: 1px;
+    }
+
+    header p {
+      margin-top: 10px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      font-weight: 300;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    nav {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    nav a {
+      background: rgba(255, 255, 255, 0.15);
+      padding: 8px 16px;
+      border-radius: 999px;
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: var(--transition);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      backdrop-filter: blur(8px);
+    }
+
+    nav a:hover {
+      background: white;
+      color: var(--accent);
+      transform: translateY(-3px);
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 50px auto;
+      padding: 0 20px;
+      animation: fadeIn 1.2s ease forwards;
+      opacity: 0;
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .card {
+      background: var(--card);
+      padding: 24px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+      transition: var(--transition);
+      transform: translateY(0);
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 30px rgba(15, 23, 42, 0.15);
+    }
+
+    .card h2 {
+      color: var(--accent);
+      margin-top: 0;
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+    }
+
+    .card p, .card li {
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    .intro {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      background: linear-gradient(135deg, #eff6ff, #dbeafe);
+      border-left: 6px solid var(--accent);
+    }
+
+    .intro .badge {
+      background: white;
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+      padding: 16px;
+      font-size: 2rem;
+      color: var(--accent);
+      transition: var(--transition);
+    }
+
+    .intro .badge:hover { transform: rotate(10deg) scale(1.1); }
+
+    footer {
+      text-align: center;
+      color: var(--muted);
+      margin: 50px 0 20px;
+      font-size: 0.9rem;
+      opacity: 0.7;
+      transition: var(--transition);
+    }
+
+    footer:hover { opacity: 1; }
+
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>First Nations of Canada — Regions & Lifestyles</h1>
+    <p>Explore six major First Nations groups and how geography and climate shaped their lives.</p>
+    <nav>
+      <a href="#woodland">Woodland</a>
+      <a href="#iroquois">Iroquois</a>
+      <a href="#plateau">Plateau</a>
+      <a href="#plains">Plains</a>
+      <a href="#pacific">Pacific Coast</a>
+      <a href="#inuit">Inuit</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="card intro">
+      <div class="lead">
+        <h2>Overview</h2>
+        <p>The First Nations peoples lived across Canada. Many were <strong>not nomadic</strong>, meaning they stayed in one place where resources supported them. The six broad groups are the Woodland, Iroquois, Plateau, Plains, Pacific Coast, and Inuit nations. Each group adapted to its surroundings and climate.</p>
+      </div>
+      <div class="badge">🌿🍂</div>
+    </section>
+
+    <section class="grid">
+      <article id="woodland" class="card">
+        <h2>Woodland First Nations</h2>
+        <p>The Woodland nations lived among dense forests and valued <strong>birch bark</strong> for making canoes, tools, and utensils. With plentiful wood and natural resources, they were mostly settled and not nomadic.</p>
+      </article>
+
+      <article id="iroquois" class="card">
+        <h2>Iroquois First Nations</h2>
+        <p>The Iroquois built well-planned villages near fresh water, farmland, and forests — a combination that supported permanent communities. Their climate was moderate, making farming and settlement easier.</p>
+      </article>
+
+      <article id="plateau" class="card">
+        <h2>Plateau First Nations</h2>
+        <p>The Plateau peoples had many sweet plants and tree sap resources. Berries and forests provided food and building materials, allowing them to stay settled. Rapid waterways meant most travel was done on foot.</p>
+      </article>
+
+      <article id="plains" class="card">
+        <h2>Plains First Nations</h2>
+        <p>The Plains nations lived in open grasslands with few trees, making wood a rare and valuable resource. Many were <strong>nomadic</strong>, following herds and seasonal patterns to find food and shelter.</p>
+      </article>
+
+      <article id="pacific" class="card">
+        <h2>Pacific Coast First Nations</h2>
+        <p>The Pacific Coast nations lived in regions with mild, stable climates and lush forests. Abundant plants and marine life supported large, permanent villages rich in culture and art.</p>
+      </article>
+
+      <article id="inuit" class="card">
+        <h2>Inuit</h2>
+        <p>The Inuit lived in Arctic regions with extreme cold and little to no trees. They valued wood and adapted to long daylight hours in summer and short days in winter, developing unique tools and lifestyles for survival in harsh conditions.</p>
+      </article>
+    </section>
+
+    <section class="card">
+      <h2>Conclusion</h2>
+      <p>Each First Nation adapted to its environment — forests supported permanent villages, while open or frozen areas encouraged mobility. Their resourcefulness and connection to the land remain an important part of Canada's history and culture today.</p>
+    </section>
+
+    <footer>
+      <p>Created with respect for the diverse First Nations peoples of Canada.</p>
+    </footer>
+  </main>
+</body>
+</html>
